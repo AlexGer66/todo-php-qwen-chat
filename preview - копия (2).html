@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет ужина - Северный Уголь</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .restaurant-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .restaurant-sub {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th {
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #95a5a6;
+            border-bottom: 1px solid #eee;
+            padding: 10px 5px;
+        }
+
+        td {
+            padding: 15px 5px;
+            border-bottom: 1px solid #f9f9f9;
+            font-size: 14px;
+        }
+
+        .item-name { font-weight: 700; color: #333; }
+        .item-guest { color: #7f8c8d; font-style: italic; }
+        .item-price { text-align: right; font-family: monospace; font-size: 16px; }
+
+        .total-row td {
+            border-bottom: none;
+            padding-top: 30px;
+            font-size: 20px;
+        }
+
+        .total-label { font-family: 'Playfair Display', serif; font-weight: bold; }
+        .total-amount { text-align: right; font-weight: bold; color: #10b981; }
+
+        .info-box {
+            margin-top: 50px;
+            background-color: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .info-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .info-text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 11px;
+            color: #bdc3c7;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <header>
+        <p class="restaurant-name">СЕВЕРНЫЙ УГОЛЬ</p>
+        <p class="restaurant-sub">Современная северная кухня | Москва</p>
+    </header>
+
+    <h1>Предварительный расчет ужина</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Наименование блюда</th>
+                <th>Гость</th>
+                <th style="text-align: right;">Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="item-name">Сугудай из муксуна</span></td>
+                <td><span class="item-guest">Девушка</span></td>
+                <td class="item-price">690 ₽</td>
+            </tr>
+            <tr>
+                <td><span class="item-name">Тартар из оленины</span></td>
+                <td><span class="item-guest">Парень</span></td>
+                <td class="item-price">820 ₽</td>
+            </tr>
+            <tr>
+                <td><span class="item-name">Стейк из лосося с овощами</span></td>
+                <td><span class="item-guest">Девушка</span></td>
+                <td class="item-price">1 190 ₽</td>
+            </tr>
+            <tr>
+                <td><span class="item-name">Томлёная оленина с ягодами</span></td>
+                <td><span class="item-guest">Парень</span></td>
+                <td class="item-price">1 280 ₽</td>
+            </tr>
+            <tr>
+                <td><span class="item-name">Десерт «Северное сияние» (2 шт)</span></td>
+                <td><span class="item-guest">Общее</span></td>
+                <td class="item-price">1 040 ₽</td>
+            </tr>
+            <tr>
+                <td><span class="item-name">Морс брусничный (2 шт)</span></td>
+                <td><span class="item-guest">Общее</span></td>
+                <td class="item-price">380 ₽</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2" class="total-label">ИТОГО К ОПЛАТЕ:</td>
+                <td class="total-amount">5 400 ₽</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <div class="info-title">Условия и информация</div>
+        <div class="info-text">
+            • Стол забронирован на ваше имя. Время ожидания: 15 минут.<br>
+            • Сервисный сбор 10% не включен в расчет и остается на ваше усмотрение.<br>
+            • Мы подготовим праздничный комплимент от ресторана к вашему приходу.<br>
+            • Контактный телефон: +7 (495) 644-23-45
+        </div>
+    </div>
+
+    <footer>
+        Этот документ не является фискальным чеком. Цены актуальны на дату формирования запроса.
+    </footer>
+</div>
+
+</body>
+</html>
